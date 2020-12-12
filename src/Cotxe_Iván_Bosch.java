@@ -1,8 +1,6 @@
 public class Cotxe_Iván_Bosch extends CotxeAbstracte implements InterfaceCotxe {
-    //Inicializa el motor por defecto parado y por tanto las revoluciones tambien se inicializan en 0.
     private EstatsMotorCotxe estado=EstatsMotorCotxe.Aturat;
     private int revoluciones=0;
-
 
     //Constructor
     public Cotxe_Iván_Bosch(String marca, String model, TipusCanvi tipuscanvi) {
@@ -10,7 +8,7 @@ public class Cotxe_Iván_Bosch extends CotxeAbstracte implements InterfaceCotxe 
     }
 
     @Override
-    //Este metodo arranca el motor si está parado y muestra una excepción si ya está en marcha
+    //Arranca el motor y si está en marcha muestra una excepción.
     public void arrancarMotor() throws Exception {
         if (estado.equals(EstatsMotorCotxe.Aturat)){
             this.estado=EstatsMotorCotxe.EnMarxa;
@@ -20,7 +18,7 @@ public class Cotxe_Iván_Bosch extends CotxeAbstracte implements InterfaceCotxe 
     }
 
     @Override
-    //Muestra el estado actual del motor
+    //Muestra si el motor está en marcha o parado.
     public EstatsMotorCotxe comprovaMotor() {
         if (this.estado.equals(EstatsMotorCotxe.EnMarxa)){
             System.out.println("El coche está en marcha");
@@ -31,7 +29,7 @@ public class Cotxe_Iván_Bosch extends CotxeAbstracte implements InterfaceCotxe 
     }
 
     @Override
-    //Muestra las revoluciones del motor que son 0, si está parado, o un número aleatorio entre 1 o 6500 si está encendido.
+    //Muestra las revoluciones que són 0 si el motor está parado y un número aleatorio entre 1 y 6500 si está en marcha.
     public int getRevolucions() {
         if (this.estado.equals(EstatsMotorCotxe.Aturat)){
             System.out.println("El coche está parado, así que las revoluciones son "+revoluciones);
@@ -44,7 +42,7 @@ public class Cotxe_Iván_Bosch extends CotxeAbstracte implements InterfaceCotxe 
     }
 
     @Override
-    //Apaga el motor si está encendido o muestra una excepción si ya está parado
+    //Para el motor si está en marcha y da una excepción si ya estaba parado.
     public void aturarMotor() throws Exception {
         if (estado.equals(EstatsMotorCotxe.EnMarxa)){
             this.estado=EstatsMotorCotxe.Aturat;
