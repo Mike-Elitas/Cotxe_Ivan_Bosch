@@ -8,13 +8,7 @@ public class Test_Cotxe_Ivan_Bosch {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        c1.comprovaMotor();
-        try {
-            c1.aturarMotor();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        c1.getRevolucions();
+
         try {
             c1.arrancarMotor();
         } catch (Exception e) {
