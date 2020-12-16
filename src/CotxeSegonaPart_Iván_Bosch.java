@@ -29,14 +29,14 @@ public class CotxeSegonaPart_Iván_Bosch extends Cotxe_Iván_Bosch {
         } else if (a=='+'){
             Scanner sc = new Scanner(System.in);
             switch (gearA) {
-                case R:gearA=Gears.N;
-                case N:gearA=Gears.F;
+                case R:gearA=Gears.N;break;
+                case N:gearA=Gears.F;break;
                 case F:throw new Exception("¡No se pueden subir más marchas!");
             }
         } else if (a=='-'){
             switch (gearA){
-                case F:gearA=Gears.N;
-                case N:gearA=Gears.R;
+                case F:gearA=Gears.N;break;
+                case N:gearA=Gears.R;break;
                 case R:throw new Exception("¡No se puede bajar más marchas!");
             }
         } else throw new Exception("¡No estás embragando, majo!¡Usa + o -!");
@@ -60,7 +60,7 @@ public class CotxeSegonaPart_Iván_Bosch extends Cotxe_Iván_Bosch {
                 case G6:throw new Exception("¡No se pueden subir más marchas!");
             }
         } else if (a=='-'){
-            switch (gearA){
+            switch (gearM){
                 case G6:gearM=Gears.G5;break;
                 case G5:gearM=Gears.G4;break;
                 case G4:gearM=Gears.G3;break;
@@ -72,7 +72,6 @@ public class CotxeSegonaPart_Iván_Bosch extends Cotxe_Iván_Bosch {
             }
         } else throw new Exception("¡No estás embragando, majo!¡Usa + o -!");
     }
-
 
     @Override
     public void arrancarMotor() throws Exception {
